@@ -7,4 +7,5 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
+  
 }
