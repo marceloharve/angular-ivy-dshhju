@@ -1,0 +1,20 @@
+{
+  "modulo": {
+    "nome": "Google Analytics",
+    "aulas": [
+      {
+        "aula": {
+          "nome" : "O que é o Digital Analytics",
+          "video": "",
+          "revisao": "",
+          "desafio":{
+            "pergunta":"No Google Analytics,ele considera um usuário?",
+            "respostas":["Através do Coockie de cada navegador", "Através do Dispositivo", "Através do E-mail logado", "Através do Navegador"],
+            "respostacerta":0,
+            "setup":""
+          }
+        }
+      }
+    ]
+  }
+}
