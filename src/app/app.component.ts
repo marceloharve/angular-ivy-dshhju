@@ -1,7 +1,8 @@
 import { Component, VERSION } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { DadosAulaService } from './dados-aula.service';
 import { Modulo } from './modulo';
-import * as data from './_files/analytics.json';
+
 
 @Component({
   selector: 'my-app',
@@ -10,9 +11,11 @@ import * as data from './_files/analytics.json';
 })
 export class AppComponent  {
   name = 'Angular ' + VERSION.major;
-  _analytics: Modulo = (data as any).default;
+
+
+
   constructor()
   {
-    console.log(this._analytics.nome );
+
   }
 }

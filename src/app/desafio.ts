@@ -3,4 +3,6 @@ export interface Desafio {
   respostas: string[];
   respostacerta: number;
   setup: string;
+  checked? : boolean;
+  atual?: boolean;
 }

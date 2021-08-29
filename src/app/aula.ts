@@ -5,4 +5,6 @@ export interface Aula {
   video: string;
   revisao: string;
   desafio: Desafio;
+  checked? : boolean;
+  atual?: boolean;
 }
