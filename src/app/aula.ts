@@ -1,4 +1,4 @@
-import { Desafio } from "./Desafio";
+import { Desafio } from "./desafio";
 
 export interface Aula {
   nome: string;

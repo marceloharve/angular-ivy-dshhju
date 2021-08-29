@@ -13,6 +13,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 
+
+
 @NgModule({
   imports:      [  MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
     {path: 'aula1', component: Aula1Component},

@@ -1,20 +1,23 @@
 {
-  "modulo": {
-    "nome": "Google Analytics",
-    "aulas": [
-      {
-        "aula": {
-          "nome" : "O que é o Digital Analytics",
-          "video": "",
-          "revisao": "<h2>1. O que é Web Analytics?</h2><p><b></b></p><p><span>A Web Analytics ou Digital Analytics, engloba a coleta, medição, análise,visualização e interpretação de dados digitais que ilustram ocomportamento dos usuários em sites, sites móveis e aplicativos móveis.</span></p><br /><h2>2. Cookies</h2><p><b></b></p><p></p><span>Os cookies são arquivos de texto armazenados no seu computador que servem para registrar informações sobre o seu acesso a um site. Cada novo site acessado gera um novo cookie.&nbsp;Cada navegador, cada computador, tem um cookie diferente.<br /></span><br /><h2>3. As ferramentas de Analytics não são perfeitas</h2><p><b></b></p><p></p><p><span>Ou seja, aquele número que vamos ver no Google Analytics não está falando exatamente de pessoas no nosso site, mas cookies. Entender isso é importante, uma vez que quando olharmos os dados, precisaremos levar em conta que eles não são perfeitos. Então lembre: os dados do Google        Analytics não são perfeitos, mas não significa que não são úteis</span><br /> </p><p><br /></p><br /><p></p>",
-          "desafio":{
-            "pergunta":"No Google Analytics,ele considera um usuário?",
-            "respostas":["Através do Coockie de cada navegador", "Através do Dispositivo", "Através do E-mail logado", "Através do Navegador"],
-            "respostacerta":0,
-            "setup":""
-          }
+  "nome": "Google Analytics",
+  "aulas": [
+    {
+      "aula": {
+        "nome": "O que é o Digital Analytics",
+        "video": "",
+        "revisao": "<h2>1. O que é Web Analytics?</h2><p><b></b></p><p><span>A Web Analytics ou Digital Analytics, engloba a coleta, medição, análise,visualização e interpretação de dados digitais que ilustram ocomportamento dos usuários em sites, sites móveis e aplicativos móveis.</span></p><br /><h2>2. Cookies</h2><p><b></b></p><p></p><span>Os cookies são arquivos de texto armazenados no seu computador que servem para registrar informações sobre o seu acesso a um site. Cada novo site acessado gera um novo cookie.&nbsp;Cada navegador, cada computador, tem um cookie diferente.<br /></span><br /><h2>3. As ferramentas de Analytics não são perfeitas</h2><p><b></b></p><p></p><p><span>Ou seja, aquele número que vamos ver no Google Analytics não está falando exatamente de pessoas no nosso site, mas cookies. Entender isso é importante, uma vez que quando olharmos os dados, precisaremos levar em conta que eles não são perfeitos. Então lembre: os dados do Google        Analytics não são perfeitos, mas não significa que não são úteis</span><br /> </p><p><br /></p><br /><p></p>",
+        "desafio": {
+          "pergunta": "No Google Analytics,ele considera um usuário?",
+          "respostas": [
+            "Através do Coockie de cada navegador",
+            "Através do Dispositivo",
+            "Através do E-mail logado",
+            "Através do Navegador"
+          ],
+          "respostacerta": 0,
+          "setup": ""
         }
       }
-    ]
-  }
+    }
+  ]
 }
