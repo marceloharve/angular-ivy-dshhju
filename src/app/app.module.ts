@@ -9,10 +9,11 @@ import { Aula1RevisaoComponent } from './aula1-revisao/aula1-revisao.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
-  imports:      [  MatButtonModule,MatToolbarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
+  imports:      [  MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
     {path: 'aula1', component: Aula1Component},
     {path: 'aula1-revisao', component: Aula1RevisaoComponent},
   ]), ],
