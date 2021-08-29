@@ -1,10 +1,19 @@
-Menu
-
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Plataforma Harve</span>
+</mat-toolbar>
 <section>
-
-  <div class="example-button-row">
-    <button mat-raised-button color="warn">Warn</button>
-    <button mat-raised-button color="warn">Warn</button>
-  </div>
+<div class="example-button-row">
+  <button mat-stroked-button color="warn" class="esqbutton">Vídeo</button>
+  <button mat-stroked-button color="warn" class="centerbutton">Revisão</button>
+  <button mat-stroked-button color="warn" class="dirbutton">Desafio</button>
+</div>
 </section>
+<router-outlet></router-outlet>
+

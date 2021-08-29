@@ -1,5 +1,5 @@
 import { Component, VERSION } from '@angular/core';
-
+import {MatToolbarModule} from '@angular/material/toolbar';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',

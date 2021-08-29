@@ -7,9 +7,11 @@ import { HelloComponent } from './hello.component';
 import { Aula1Component } from './aula1/aula1.component';
 import { Aula1RevisaoComponent } from './aula1-revisao/aula1-revisao.component';
 import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
-  imports:      [   MatButtonModule, BrowserModule, FormsModule,  RouterModule.forRoot([
+  imports:      [   MatButtonModule,MatToolbarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
     {path: 'aula1', component: Aula1Component},
     {path: 'aula1-revisao', component: Aula1RevisaoComponent},
   ]), ],
