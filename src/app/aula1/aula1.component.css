@@ -63,3 +63,13 @@ mat-progress-bar
 .example-radio-button {
   margin: 5px;
 }
+
+.divContinuar
+{
+  text-align: right;
+}
+
+.btnContinuar{
+  margin:8px;
+
+}
