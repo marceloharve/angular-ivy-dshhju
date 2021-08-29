@@ -12,7 +12,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
-
+import { DadosAulaService } from './dados-aula.service';
 
 
 @NgModule({
@@ -21,6 +21,9 @@ import {MatCardModule} from '@angular/material/card';
     {path: 'aula1-revisao', component: Aula1RevisaoComponent},
   ]), ],
   declarations: [ AppComponent, HelloComponent,Aula1Component,Aula1RevisaoComponent ],
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent ],
+  providers: [
+    DadosAulaService
+  ]  
 })
 export class AppModule { }

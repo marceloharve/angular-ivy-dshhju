@@ -14,7 +14,7 @@ export class AppComponent  {
 
 
 
-  constructor()
+  constructor(dados : DadosAulaService)
   {
 
   }
