@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-aula1',
   templateUrl: './aula1.component.html',
@@ -10,6 +11,7 @@ export class Aula1Component implements OnInit {
   divrevisao = false;
   divdesafio = false;
   divrespotacorreta = false;
+  classeresposta = "respostaerrada"
   setup = false;
   respostaCorreta = 0;
   respostausuario = "";
@@ -40,9 +42,17 @@ export class Aula1Component implements OnInit {
     this.divvideo = false;
   }  
 
-  responder()
+  radioChange(event)
   {
-
+    this.divrespotacorreta = true;
+    if(event.value == this.respostas[this.respostaCorreta] )
+    {
+      this.classeresposta = "respostacerta";
+    }
+    else
+    {
+      this.classeresposta = "respostaerrada";
+    }
   }
 
 }

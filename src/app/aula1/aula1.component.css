@@ -73,3 +73,11 @@ mat-progress-bar
   margin:8px;
 
 }
+
+.respostacerta{
+  color: green;
+}
+
+.respostaerrada{
+  color: red;
+}
