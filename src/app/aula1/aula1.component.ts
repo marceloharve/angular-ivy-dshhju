@@ -9,8 +9,11 @@ export class Aula1Component implements OnInit {
   divvideo = true;
   divrevisao = false;
   divdesafio = false;
-  favoriteSeason: string;
-  seasons: string[] = ['Winter', 'Spring', 'Summer', 'Autumn'];
+  divrespotacorreta = false;
+  setup = false;
+  respostaCorreta = 0;
+  respostausuario = "";
+  respostas: string[] = ['Através do Coockie de cada navegador', 'Através do Dispositivo', 'Através do E-mail logado', 'Através do Navegador'];
   constructor() { }
 
   ngOnInit() {
@@ -36,5 +39,10 @@ export class Aula1Component implements OnInit {
     this.divrevisao = false;
     this.divvideo = false;
   }  
+
+  responder()
+  {
+
+  }
 
 }

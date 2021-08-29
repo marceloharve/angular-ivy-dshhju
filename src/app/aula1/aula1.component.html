@@ -1,11 +1,30 @@
 <h1>Google Analytics - O que é o Digital Analytics</h1>
 <section>
   <div class="example-button-row">
-    <button mat-stroked-button color="warn" class="esqbutton" (click)="videoclick()" >Vídeo</button>
-    <button mat-stroked-button color="warn" class="centerbutton" (click)="revisaoclick()" >
+    <button
+      mat-stroked-button
+      color="warn"
+      class="esqbutton"
+      (click)="videoclick()"
+    >
+      Vídeo
+    </button>
+    <button
+      mat-stroked-button
+      color="warn"
+      class="centerbutton"
+      (click)="revisaoclick()"
+    >
       Revisão
     </button>
-    <button mat-stroked-button color="warn" class="dirbutton"  (click)="desafioclick()" >Desafio</button>
+    <button
+      mat-stroked-button
+      color="warn"
+      class="dirbutton"
+      (click)="desafioclick()"
+    >
+      Desafio
+    </button>
   </div>
 </section>
 <ng-container *ngIf="divvideo">
@@ -22,32 +41,64 @@
   <script src="https://player.vimeo.com/api/player.js"></script>
 </ng-container>
 <ng-container *ngIf="divrevisao">
-<h2>1. O que é Web Analytics?</h2>
-<p><b id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"></b></p>
-<p dir="ltr"><span id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1">A Web Analytics ou Digital Analytics, engloba a coleta, medição, análise, visualização e interpretação de dados digitais que ilustram o comportamento dos usuários em sites, sites móveis e aplicativos móveis.”</span></p>
-<br>
-<h2>2. Cookies</h2>
-<p><b id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"></b></p>
-<p dir="ltr"></p><span>Os cookies são arquivos de texto armazenados no seu computador que servem para registrar informações sobre o seu acesso a um site. Cada novo site acessado gera um novo cookie.&nbsp;Cada navegador, cada computador, tem um cookie diferente.<br></span><br>
-<h2>3. As ferramentas de Analytics não são perfeitas</h2>
-<p><b id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"></b></p>
-<p dir="ltr"></p>
-<p><span>Ou seja, aquele número que vamos ver no Google Analytics não está falando exatamente de pessoas no nosso site, mas cookies. Entender isso é importante, uma vez que quando olharmos os dados, precisaremos levar em conta que eles não são perfeitos. Então lembre: os dados do Google Analytics não são perfeitos, mas não significa que não são úteis</span><br></p>
-<p><br></p><br>
-<p></p>
+  <h2>1. O que é Web Analytics?</h2>
+  <p><b id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"></b></p>
+  <p dir="ltr">
+    <span id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"
+      >A Web Analytics ou Digital Analytics, engloba a coleta, medição, análise,
+      visualização e interpretação de dados digitais que ilustram o
+      comportamento dos usuários em sites, sites móveis e aplicativos
+      móveis.”</span
+    >
+  </p>
+  <br />
+  <h2>2. Cookies</h2>
+  <p><b id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"></b></p>
+  <p dir="ltr"></p>
+  <span
+    >Os cookies são arquivos de texto armazenados no seu computador que servem
+    para registrar informações sobre o seu acesso a um site. Cada novo site
+    acessado gera um novo cookie.&nbsp;Cada navegador, cada computador, tem um
+    cookie diferente.<br /></span
+  ><br />
+  <h2>3. As ferramentas de Analytics não são perfeitas</h2>
+  <p><b id="docs-internal-guid-8f4e07f4-7fff-a276-3132-8df646dd40a1"></b></p>
+  <p dir="ltr"></p>
+  <p>
+    <span
+      >Ou seja, aquele número que vamos ver no Google Analytics não está falando
+      exatamente de pessoas no nosso site, mas cookies. Entender isso é
+      importante, uma vez que quando olharmos os dados, precisaremos levar em
+      conta que eles não são perfeitos. Então lembre: os dados do Google
+      Analytics não são perfeitos, mas não significa que não são úteis</span
+    ><br />
+  </p>
+  <p><br /></p>
+  <br />
+  <p></p>
 </ng-container>
 <ng-container *ngIf="divdesafio">
-<label id="example-radio-group-label">Pick your favorite season</label>
-<mat-radio-group
-  aria-labelledby="example-radio-group-label"
-  class="example-radio-group"
-  [(ngModel)]="favoriteSeason">
-  <mat-radio-button class="example-radio-button" *ngFor="let season of seasons" [value]="season">
-    {{season}}
-  </mat-radio-button>
-</mat-radio-group>
-<div>Your favorite season is: {{favoriteSeason}}</div>
-<mat-card>Simple card</mat-card>
+  <label id="example-radio-group-label"
+    >No Google Analytics,ele considera um usuário?
+  </label>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+  >
+    <mat-radio-button
+      class="example-radio-button"
+      *ngFor="let season of respostas"
+      [value]="season"
+      [(ngModel)]="respostausuario"
+    >
+      {{season}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <ng-container *ngIf="divrespotacorreta">
+    <div>A resposta correta é: {{respostas[respostaCorreta]}}</div>
+  </ng-container>
+  <mat-card *ngIf="setup">Simple card</mat-card>
 </ng-container>
-<div class="divContinuar"><button mat-raised-button color="warn" class="btnContinuar"  >Continuar</button></div>
-
+<div class="divContinuar">
+  <button mat-raised-button color="warn" class="btnContinuar">Continuar</button>
+</div>
