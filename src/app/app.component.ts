@@ -1,5 +1,5 @@
 import { Component, Inject, VERSION } from '@angular/core';
-
+import { DadosAulaService } from './dados-aula.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 export interface DialogData {
@@ -29,7 +29,7 @@ export class AppComponent  {
     });
   }
 
-  constructor(public dialog: MatDialog)
+  constructor(public dialog: MatDialog,public dados : DadosAulaService)
   {
 
   }
