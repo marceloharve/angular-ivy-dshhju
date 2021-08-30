@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DadosAulaService } from '../dados-aula.service';
 
 @Component({
   selector: 'app-aula1',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Aula1Component implements OnInit {
   divvideo = true;
+  aulaatual = "";
+  revisaoatual = "";
+
   divrevisao = false;
   divdesafio = false;
   divrespotacorreta = false;
@@ -20,7 +24,10 @@ export class Aula1Component implements OnInit {
     'Através do E-mail logado',
     'Através do Navegador'
   ];
-  constructor() {}
+  constructor(public dados : DadosAulaService) {
+    this.aulaatual = dados.getAulaAtual();
+    this.revisaoatual = dados.getRevisaoAtual();
+  }
 
   ngOnInit() {}
 

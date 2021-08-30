@@ -1,6 +1,5 @@
 import { Component, VERSION } from '@angular/core';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { DadosAulaService } from './dados-aula.service';
 import { Modulo } from './modulo';
 
 
@@ -14,7 +13,7 @@ export class AppComponent  {
 
 
 
-  constructor(dados : DadosAulaService)
+  constructor()
   {
 
   }
