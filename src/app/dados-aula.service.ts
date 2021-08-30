@@ -63,4 +63,39 @@ export class DadosAulaService  implements OnInit {
     }
   }
 
+  getPerguntaAtual()
+  {
+    let item = this._analytics.aulas.find(p => p.checked == true);
+
+    if (item != null)
+    {
+      return item.desafio.pergunta;
+    }
+    else
+    {
+      return "";
+    }
+  }
+
+  getAtual()
+  {
+    return  this._analytics.aulas.find(p => p.checked == true);
+
+
+  }
+
+  hasSetup()
+  {
+    let _aulaAtual = this.getAtual();
+    if (_aulaAtual.desafio.setup == "")
+    {
+      return false;
+    }
+    else
+    {
+      return true;
+    }
+
+  }
+
 }

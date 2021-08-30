@@ -12,6 +12,7 @@ export class Aula1Component implements OnInit {
   aulaatual = "";
   revisaoatual = "";
   videoatual : SafeResourceUrl;
+  perguntaatual = ""
   divrevisao = false;
   divdesafio = false;
   divrespotacorreta = false;
@@ -19,16 +20,15 @@ export class Aula1Component implements OnInit {
   setup = false;
   respostaCorreta = 0;
   respostausuario = '';
-  respostas: string[] = [
-    'Através do Coockie de cada navegador',
-    'Através do Dispositivo',
-    'Através do E-mail logado',
-    'Através do Navegador'
-  ];
+  respostas: string[];
   constructor(public dados : DadosAulaService) {
     this.aulaatual = dados.getAulaAtual();
     this.revisaoatual = dados.getRevisaoAtual();
     this.videoatual = dados.getVideoAtual();
+    this.perguntaatual = dados.getPerguntaAtual();
+    this.respostaCorreta = dados.getAtual().desafio.respostacerta;
+    this.respostas = dados.getAtual().desafio.respostas;
+    this.setup = dados.hasSetup();
   }
 
   ngOnInit() {}
