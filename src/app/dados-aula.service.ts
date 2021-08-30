@@ -9,13 +9,13 @@ export class DadosAulaService implements OnInit {
   _analytics: Modulo = (data as any).default;
   constructor(private sanitizer: DomSanitizer) {
     this._analytics.atual = true;
-    this._analytics.aulas[0].checked = true;
+    this._analytics.aulas[0].atual = true;
   }
 
   ngOnInit() {}
 
   getRevisaoAtual() {
-    let item = this._analytics.aulas.find(p => p.checked == true);
+    let item = this._analytics.aulas.find(p => p.atual == true);
 
     if (item != null) {
       console.log(item.revisao);
@@ -26,7 +26,7 @@ export class DadosAulaService implements OnInit {
   }
 
   getAulaAtual() {
-    let item = this._analytics.aulas.find(p => p.checked == true);
+    let item = this._analytics.aulas.find(p => p.atual == true);
 
     if (item != null) {
       return item.nome;
@@ -36,7 +36,7 @@ export class DadosAulaService implements OnInit {
   }
 
   getVideoAtual() {
-    let item = this._analytics.aulas.find(p => p.checked == true);
+    let item = this._analytics.aulas.find(p => p.atual == true);
 
     if (item != null) {
       return this.sanitizer.bypassSecurityTrustResourceUrl(item.video);
@@ -46,7 +46,7 @@ export class DadosAulaService implements OnInit {
   }
 
   getPerguntaAtual() {
-    let item = this._analytics.aulas.find(p => p.checked == true);
+    let item = this._analytics.aulas.find(p => p.atual == true);
 
     if (item != null) {
       return item.desafio.pergunta;
@@ -56,14 +56,14 @@ export class DadosAulaService implements OnInit {
   }
 
   getAtual() {
-    return this._analytics.aulas.find(p => p.checked == true);
+    return this._analytics.aulas.find(p => p.atual == true);
   }
 
   proximaAula() {
-    let indice = this._analytics.aulas.findIndex(p => p.checked == true);
+    let indice = this._analytics.aulas.findIndex(p => p.atual == true);
     if (indice + 1 <= this._analytics.aulas.length) {
-      this._analytics.aulas[indice].checked = false;
-      this._analytics.aulas[indice + 1].checked = true;
+      this._analytics.aulas[indice].atual = false;
+      this._analytics.aulas[indice + 1].atual = true;
       console.log(this.getAtual());
     }
   }
