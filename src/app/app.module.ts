@@ -13,14 +13,17 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCardModule} from '@angular/material/card';
 import { DadosAulaService } from './dados-aula.service';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatListModule} from '@angular/material/list';
+import {Menu} from './app.component';
 
 @NgModule({
-  imports:      [  MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
+  imports:      [ MatListModule,MatDialogModule, BrowserAnimationsModule,MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
     {path: 'aula1', component: Aula1Component},
     {path: 'aula1-revisao', component: Aula1RevisaoComponent},
   ]), ],
-  declarations: [ AppComponent, HelloComponent,Aula1Component,Aula1RevisaoComponent ],
+  declarations: [ Menu,AppComponent, HelloComponent,Aula1Component,Aula1RevisaoComponent ],
   bootstrap:    [ AppComponent ],
   providers: [
     DadosAulaService
