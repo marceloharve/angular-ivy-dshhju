@@ -41,7 +41,7 @@
   <script src="https://player.vimeo.com/api/player.js"></script>
 </ng-container>
 <ng-container *ngIf="divrevisao">
-  {{revisaoatual}}
+<div [innerHTML]="revisaoatual"></div>
 </ng-container>
 <ng-container *ngIf="divdesafio">
   <label id="example-radio-group-label"
