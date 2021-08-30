@@ -1,10 +1,10 @@
 import { Component, Inject, VERSION } from '@angular/core';
 import { DadosAulaService } from './dados-aula.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Aula } from './aula';
 
 export interface DialogData {
-  animal: string;
-  name: string;
+  dados: DadosAulaService;
 }
 
 @Component({
@@ -19,8 +19,8 @@ export class AppComponent  {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(Menu, {
-      width: '250px',
-      data: {name: this.name, animal: this.animal}
+      width: '350px',height:'300px',
+      data: {dados: this.dados}
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -43,7 +43,9 @@ export class Menu {
 
   constructor(
     public dialogRef: MatDialogRef<Menu>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      
+    }
 
   onNoClick(): void {
     this.dialogRef.close();
