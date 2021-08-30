@@ -81,3 +81,8 @@ mat-progress-bar
 .respostaerrada{
   color: red;
 }
+
+.divSetup
+{
+  background-color: rgb(209, 207, 110);
+}

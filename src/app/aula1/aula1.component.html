@@ -47,7 +47,8 @@
   <ng-container *ngIf="divrespotacorreta">
     <div [class]="classeresposta">A resposta correta é: {{respostas[respostaCorreta]}}</div>
   </ng-container>
-  <mat-card *ngIf="setup">Simple card</mat-card>
+  <mat-card *ngIf="setup" class="divSetup">
+  <div [innerHTML]="textosetup"></div></mat-card>
 </ng-container>
 <div class="divContinuar">
   <button mat-raised-button color="warn" class="btnContinuar" (click)="continuar()">Continuar</button>
