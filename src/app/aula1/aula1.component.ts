@@ -24,17 +24,23 @@ export class Aula1Component implements OnInit {
   textosetup = "";
 
   constructor(public dados : DadosAulaService) {
-    this.aulaatual = dados.getAulaAtual();
-    this.revisaoatual = dados.getRevisaoAtual();
-    this.videoatual = dados.getVideoAtual();
-    this.perguntaatual = dados.getPerguntaAtual();
-    this.respostaCorreta = dados.getAtual().desafio.respostacerta;
-    this.respostas = dados.getAtual().desafio.respostas;
-    this.setup = dados.hasSetup();
-    this.textosetup = dados.getAtual().desafio.setup;
+    this.imprimiraula();
+
   }
 
   ngOnInit() {}
+
+  imprimiraula()
+  {
+    this.aulaatual = this.dados.getAulaAtual();
+    this.revisaoatual = this.dados.getRevisaoAtual();
+    this.videoatual = this.dados.getVideoAtual();
+    this.perguntaatual = this.dados.getPerguntaAtual();
+    this.respostaCorreta = this.dados.getAtual().desafio.respostacerta;
+    this.respostas = this.dados.getAtual().desafio.respostas;
+    this.setup = this.dados.hasSetup();
+    this.textosetup = this.dados.getAtual().desafio.setup;
+  }
 
   videoclick() {
     this.divdesafio = false;
@@ -68,6 +74,7 @@ export class Aula1Component implements OnInit {
       {
         this.dados.proximaAula(); 
         this.videoclick(); 
+        this.imprimiraula();
       }
     }
   }

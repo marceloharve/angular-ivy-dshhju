@@ -29,7 +29,6 @@ export class DadosAulaService implements OnInit {
     let item = this._analytics.aulas.find(p => p.checked == true);
 
     if (item != null) {
-      console.log(item.nome);
       return item.nome;
     } else {
       return '';
@@ -40,7 +39,6 @@ export class DadosAulaService implements OnInit {
     let item = this._analytics.aulas.find(p => p.checked == true);
 
     if (item != null) {
-      console.log(item.video);
       return this.sanitizer.bypassSecurityTrustResourceUrl(item.video);
     } else {
       return '';
@@ -66,6 +64,7 @@ export class DadosAulaService implements OnInit {
     if (indice + 1 <= this._analytics.aulas.length) {
       this._analytics.aulas[indice].checked = false;
       this._analytics.aulas[indice + 1].checked = true;
+      console.log(this.getAtual());
     }
   }
 
