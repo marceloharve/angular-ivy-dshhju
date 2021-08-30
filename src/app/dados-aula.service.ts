@@ -1,11 +1,13 @@
 import { Injectable, OnInit } from '@angular/core';
 import * as data from './_files/analytics.json';
 import { Modulo } from './modulo';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({providedIn: 'root'})
 export class DadosAulaService  implements OnInit {
+[x: string]: any;
   _analytics: Modulo = (data as any).default;
-  constructor() { 
+  constructor(private sanitizer: DomSanitizer) { 
     this._analytics.atual = true;
     this._analytics.aulas[0].checked = true;  
 
@@ -53,7 +55,7 @@ export class DadosAulaService  implements OnInit {
     if (item != null)
     {
       console.log(item.video);
-      return item.video;
+      return this.sanitizer.bypassSecurityTrustResourceUrl(item.video);
     }
     else
     {

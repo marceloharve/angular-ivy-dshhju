@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SafeResourceUrl } from '@angular/platform-browser';
 import { DadosAulaService } from '../dados-aula.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class Aula1Component implements OnInit {
   divvideo = true;
   aulaatual = "";
   revisaoatual = "";
-  videoatual = "";
+  videoatual : SafeResourceUrl;
   divrevisao = false;
   divdesafio = false;
   divrespotacorreta = false;
