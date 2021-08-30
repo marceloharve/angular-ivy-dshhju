@@ -54,6 +54,23 @@ export class Aula1Component implements OnInit {
     this.divvideo = false;
   }
 
+  continuar()
+  {
+    if(this.divvideo){
+      this.revisaoclick();
+    }
+    else
+    {
+      if(this.divrevisao){
+        this.desafioclick();
+      }
+      else
+      {
+        
+      }
+    }
+  }
+
   radioChange(event) {
     this.divrespotacorreta = true;
     if (event.value == this.respostas[this.respostaCorreta]) {
