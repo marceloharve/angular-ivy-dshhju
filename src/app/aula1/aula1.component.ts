@@ -21,6 +21,8 @@ export class Aula1Component implements OnInit {
   respostaCorreta = 0;
   respostausuario = '';
   respostas: string[];
+  textosetup = "";
+
   constructor(public dados : DadosAulaService) {
     this.aulaatual = dados.getAulaAtual();
     this.revisaoatual = dados.getRevisaoAtual();
@@ -29,6 +31,7 @@ export class Aula1Component implements OnInit {
     this.respostaCorreta = dados.getAtual().desafio.respostacerta;
     this.respostas = dados.getAtual().desafio.respostas;
     this.setup = dados.hasSetup();
+    this.textosetup = dados.getAtual().desafio.setup;
   }
 
   ngOnInit() {}
