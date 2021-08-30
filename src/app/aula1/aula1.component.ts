@@ -10,7 +10,7 @@ export class Aula1Component implements OnInit {
   divvideo = true;
   aulaatual = "";
   revisaoatual = "";
-
+  videoatual = "";
   divrevisao = false;
   divdesafio = false;
   divrespotacorreta = false;
@@ -27,6 +27,7 @@ export class Aula1Component implements OnInit {
   constructor(public dados : DadosAulaService) {
     this.aulaatual = dados.getAulaAtual();
     this.revisaoatual = dados.getRevisaoAtual();
+    this.videoatual = dados.getVideoAtual();
   }
 
   ngOnInit() {}

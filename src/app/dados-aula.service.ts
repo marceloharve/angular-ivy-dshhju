@@ -46,4 +46,19 @@ export class DadosAulaService  implements OnInit {
     }
   }
 
+  getVideoAtual()
+  {
+    let item = this._analytics.aulas.find(p => p.checked == true);
+
+    if (item != null)
+    {
+      console.log(item.video);
+      return item.video;
+    }
+    else
+    {
+      return "";
+    }
+  }
+
 }
