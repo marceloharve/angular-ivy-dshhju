@@ -3,99 +3,78 @@ import * as data from './_files/analytics.json';
 import { Modulo } from './modulo';
 import { DomSanitizer } from '@angular/platform-browser';
 
-@Injectable({providedIn: 'root'})
-export class DadosAulaService  implements OnInit {
-[x: string]: any;
+@Injectable({ providedIn: 'root' })
+export class DadosAulaService implements OnInit {
+  [x: string]: any;
   _analytics: Modulo = (data as any).default;
-  constructor(private sanitizer: DomSanitizer) { 
+  constructor(private sanitizer: DomSanitizer) {
     this._analytics.atual = true;
-    this._analytics.aulas[0].checked = true;  
-
+    this._analytics.aulas[0].checked = true;
   }
 
-  ngOnInit() {
-   
-  }
+  ngOnInit() {}
 
-  getRevisaoAtual()
-  {
+  getRevisaoAtual() {
     let item = this._analytics.aulas.find(p => p.checked == true);
 
-    if (item != null)
-    {
+    if (item != null) {
       console.log(item.revisao);
       return item.revisao;
-    }
-    else
-    {
-      return "";
+    } else {
+      return '';
     }
   }
 
-
-  getAulaAtual()
-  {
+  getAulaAtual() {
     let item = this._analytics.aulas.find(p => p.checked == true);
 
-    if (item != null)
-    {
-      console.log(item.nome)
+    if (item != null) {
+      console.log(item.nome);
       return item.nome;
-    }
-    else
-    {
-      return "";
+    } else {
+      return '';
     }
   }
 
-  getVideoAtual()
-  {
+  getVideoAtual() {
     let item = this._analytics.aulas.find(p => p.checked == true);
 
-    if (item != null)
-    {
+    if (item != null) {
       console.log(item.video);
       return this.sanitizer.bypassSecurityTrustResourceUrl(item.video);
-    }
-    else
-    {
-      return "";
+    } else {
+      return '';
     }
   }
 
-  getPerguntaAtual()
-  {
+  getPerguntaAtual() {
     let item = this._analytics.aulas.find(p => p.checked == true);
 
-    if (item != null)
-    {
+    if (item != null) {
       return item.desafio.pergunta;
-    }
-    else
-    {
-      return "";
+    } else {
+      return '';
     }
   }
 
-  getAtual()
-  {
-    return  this._analytics.aulas.find(p => p.checked == true);
-
-
+  getAtual() {
+    return this._analytics.aulas.find(p => p.checked == true);
   }
 
-  hasSetup()
-  {
+  proximaAula() {
+    let indice = this._analytics.aulas.findIndex(p => p.checked == true);
+    if (indice + 1 <= this._analytics.aulas.length) {
+      this._analytics.aulas[indice].checked = false;
+      this._analytics.aulas[indice + 1].checked = true;
+    }
+  }
+
+  hasSetup() {
     let _aulaAtual = this.getAtual();
-    if (_aulaAtual.desafio.setup == "")
-    {
+    if (_aulaAtual.desafio.setup == '') {
       return false;
-    }
-    else
-    {
+    } else {
       return true;
     }
-
   }
-
 }

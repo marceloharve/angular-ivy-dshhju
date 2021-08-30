@@ -66,7 +66,8 @@ export class Aula1Component implements OnInit {
       }
       else
       {
-        
+        this.dados.proximaAula(); 
+        this.videoclick(); 
       }
     }
   }
