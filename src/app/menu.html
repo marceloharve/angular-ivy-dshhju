@@ -1,11 +1,19 @@
 
 <div mat-dialog-content>
+  <p>{{data.dados._analytics.nome}} - Aula {{data.dados._analytics.aula}}
+  <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+  <mat-icon>skip_previous</mat-icon>
+</button>
+<button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+<mat-icon>skip_next</mat-icon>
+</button>
+  </p>
   <mat-list *ngFor="let aula of data.dados._analytics.aulas">
-    <mat-list-item>{{aula.nome}}</mat-list-item>
+    <mat-list-item><p style="font-size:12px;">{{aula.nome}}</p></mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button cdkFocusInitial>Ok</button>
+ <button mat-button (click)="onNoClick()">Voltar</button>
+  
 </div>
