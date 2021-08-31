@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SafeResourceUrl } from '@angular/platform-browser';
 import { DadosAulaService } from '../dados-aula.service';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-aula1',
@@ -22,10 +24,17 @@ export class Aula1Component implements OnInit {
   respostausuario = '';
   respostas: string[];
   textosetup = "";
+  id : number;
 
-  constructor(public dados : DadosAulaService) {
-    this.imprimiraula();
-
+  constructor(public dados : DadosAulaService,private route: ActivatedRoute,
+    ) {
+      this.route.paramMap.subscribe(params => {
+        this.id = Number(params.get('id'));
+        this.dados.selecionatopico(this.id);
+        this.imprimiraula();
+        
+      });
+      
   }
 
   ngOnInit() {}

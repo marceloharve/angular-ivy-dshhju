@@ -1,9 +1,9 @@
-import { Aula } from "./aula";
+import { TopicoAula } from "./aula";
 
 export interface Modulo {
   nome : string;
   aula: number;
-  aulas : Aula[];
+  aulas : TopicoAula[];
   checked? : boolean;
   atual?: boolean;
 }

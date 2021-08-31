@@ -21,7 +21,7 @@ export class DadosAulaService implements OnInit {
     let item = this._analytics.aulas.find(p => p.atual == true);
 
     if (item != null) {
-      console.log(item.revisao);
+
       return item.revisao;
     } else {
       return '';
@@ -68,8 +68,18 @@ export class DadosAulaService implements OnInit {
       this._analytics.aulas[indice].atual = false;
       this._analytics.aulas[indice].checked = true;
       this._analytics.aulas[indice + 1].atual = true;
-      console.log(this.getAtual());
+
     }
+  }
+
+  selecionatopico(idTopicoAula)
+  {
+    let indice = this._analytics.aulas.findIndex(p => p.idTopicoAula == idTopicoAula );
+    if (indice > 0) {
+      this._analytics.aulas.forEach(t => t.atual = false);
+      this._analytics.aulas[indice].atual = true;
+
+    }    
   }
 
   hasSetup() {

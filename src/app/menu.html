@@ -1,20 +1,38 @@
-
 <div mat-dialog-content>
-  <p>{{data.dados._analytics.nome}} - Aula {{data.dados._analytics.aula}}
-  <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-  <mat-icon>skip_previous</mat-icon>
-</button>
-<button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
-<mat-icon>skip_next</mat-icon>
-</button>
+  <p>
+    {{data.dados._analytics.nome}} - Aula {{data.dados._analytics.aula}}
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>skip_previous</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      color="primary"
+      aria-label="Example icon button with a home icon"
+    >
+      <mat-icon>skip_next</mat-icon>
+    </button>
   </p>
-  <mat-progress-bar mode="determinate" [value]="data.dados.quantidadevistas()"></mat-progress-bar>  
+  <mat-progress-bar
+    mode="determinate"
+    [value]="data.dados.quantidadevistas()"
+  ></mat-progress-bar>
   <mat-list *ngFor="let aula of data.dados._analytics.aulas">
-    <mat-list-item><p style="font-size:12px;">{{aula.nome}}</p><button mat-button [hidden]="!aula.checked" ><mat-icon>check</mat-icon></button></mat-list-item>
+    <mat-list-item
+      ><p style="font-size:12px;">
+        <button mat-button (click)="selectaula(aula.idTopicoAula)">{{aula.nome}}</button>
+        
+      </p>
+      <button mat-button [hidden]="!aula.checked">
+        <mat-icon>check</mat-icon>
+      </button></mat-list-item
+    >
     <mat-divider></mat-divider>
   </mat-list>
 </div>
 <div mat-dialog-actions>
- <button mat-button (click)="onNoClick()">Voltar</button>
-  
+  <button mat-button (click)="onNoClick()">Voltar</button>
 </div>
