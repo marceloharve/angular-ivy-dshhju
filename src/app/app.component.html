@@ -7,7 +7,17 @@
   >
     <mat-icon>menu</mat-icon>
   </button>
-  <span>Plataforma Harve</span>
+  <span></span>
+  <span class="example-spacer"></span>
+  <button mat-button [matMenuTriggerFor]="menu">Aluno Harve</button>
+<!-- #enddocregion mat-menu-trigger-for -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Meus Cursos</button>
+  <button mat-menu-item>Marcar mentoria</button>
+  <button mat-menu-item>Editar perfil</button>
+  <button mat-menu-item>Logout</button>
+</mat-menu>
+
 </mat-toolbar>
 
 <router-outlet></router-outlet>

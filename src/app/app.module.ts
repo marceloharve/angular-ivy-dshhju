@@ -17,9 +17,10 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import {Menu} from './app.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
-  imports:      [ MatListModule,MatDialogModule, BrowserAnimationsModule,MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
+  imports:      [MatMenuModule, MatListModule,MatDialogModule, BrowserAnimationsModule,MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
     {path: 'aula1', component: Aula1Component},
     {path: 'aula1-revisao', component: Aula1RevisaoComponent},
   ]), ],
