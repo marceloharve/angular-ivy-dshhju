@@ -11,6 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
   templateUrl: './aula1.component.html',
   styleUrls: ['./aula1.component.css']
 })
+
 export class Aula1Component implements OnInit {
   divvideo = true;
   aulaatual = "";
@@ -32,14 +33,18 @@ export class Aula1Component implements OnInit {
     ) {
       this.route.paramMap.subscribe(params => {
         this.id = Number(params.get('id'));
-        this.dados.selecionatopico(this.id);
-        this.imprimiraula();
+
         
       });
       
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.dados.selecionatopico(this.id);
+    this.imprimiraula();
+    console.log('foi');
+
+  }
 
   imprimiraula()
   {

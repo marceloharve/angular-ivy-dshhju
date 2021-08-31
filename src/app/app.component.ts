@@ -3,7 +3,13 @@ import { DadosAulaService } from './dados-aula.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TopicoAula } from './aula';
 import {MatMenuModule} from '@angular/material/menu';
+import { Router } from "@angular/router";
+
+
+
 export interface DialogData {
+
+
   dados: DadosAulaService;
 }
 
@@ -24,7 +30,6 @@ export class AppComponent  {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       this.animal = result;
     });
   }
@@ -41,13 +46,18 @@ export class AppComponent  {
 })
 export class Menu {
 
-  constructor(
+  constructor(private router: Router,
     public dialogRef: MatDialogRef<Menu>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-      console.log(data);
     }
 
   onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  selectaula(idTopicoAula)
+  {
+    this.router.navigate(["aula1/"+ idTopicoAula.toString()]);
     this.dialogRef.close();
   }
 
