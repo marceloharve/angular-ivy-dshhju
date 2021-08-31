@@ -5,7 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { Aula1Component } from './aula1/aula1.component';
-import { Aula1RevisaoComponent } from './aula1-revisao/aula1-revisao.component';
+
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -20,11 +20,10 @@ import {Menu} from './app.component';
 import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
-  imports:      [MatMenuModule, MatListModule,MatDialogModule, BrowserAnimationsModule,MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
-    {path: 'aula1', component: Aula1Component},
-    {path: 'aula1-revisao', component: Aula1RevisaoComponent},
+  imports:      [ MatMenuModule,MatListModule,MatDialogModule, BrowserAnimationsModule,MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
+    {path: 'aula1', component: Aula1Component}
   ]), ],
-  declarations: [ Menu,AppComponent, HelloComponent,Aula1Component,Aula1RevisaoComponent ],
+  declarations: [ Menu,AppComponent, HelloComponent,Aula1Component ],
   bootstrap:    [ AppComponent ],
   providers: [
     DadosAulaService

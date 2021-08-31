@@ -10,6 +10,9 @@ export class DadosAulaService implements OnInit {
   constructor(private sanitizer: DomSanitizer) {
     this._analytics.atual = true;
     this._analytics.aulas[0].atual = true;
+    this._analytics.aulas.forEach(p =>{
+      p.checked = false;
+    });
   }
 
   ngOnInit() {}

@@ -10,7 +10,7 @@
   </p>
   <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>  
   <mat-list *ngFor="let aula of data.dados._analytics.aulas">
-    <mat-list-item><p style="font-size:12px;">{{aula.nome}}</p><button mat-button [hidden]="!(aula.checked)"><mat-icon>check</mat-icon></button></mat-list-item>
+    <mat-list-item><p style="font-size:12px;">{{aula.nome}}</p><button mat-button ><mat-icon>check</mat-icon>{{aula.checked}}</button></mat-list-item>
     <mat-divider></mat-divider>
   </mat-list>
 </div>
