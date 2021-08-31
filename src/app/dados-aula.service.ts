@@ -75,9 +75,12 @@ export class DadosAulaService implements OnInit {
   selecionatopico(idTopicoAula)
   {
     let indice = this._analytics.aulas.findIndex(p => p.idTopicoAula == idTopicoAula );
-    if (indice > 0) {
+    console.log('indice');
+    console.log(indice);
+    if (indice => 0) {
       this._analytics.aulas.forEach(t => t.atual = false);
       this._analytics.aulas[indice].atual = true;
+      console.log(this._analytics.aulas[indice]);
 
     }    
   }

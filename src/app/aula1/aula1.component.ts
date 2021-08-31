@@ -33,16 +33,16 @@ export class Aula1Component implements OnInit {
     ) {
       this.route.paramMap.subscribe(params => {
         this.id = Number(params.get('id'));
-
+        this.dados.selecionatopico(this.id);
+        this.imprimiraula();
+        console.log('foi'+this.id.toString());
         
       });
       
   }
 
   ngOnInit() {
-    this.dados.selecionatopico(this.id);
-    this.imprimiraula();
-    console.log('foi');
+
 
   }
 
