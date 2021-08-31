@@ -8,7 +8,7 @@
 <mat-icon>skip_next</mat-icon>
 </button>
   </p>
-  <mat-progress-bar mode="determinate" value="40"></mat-progress-bar>  
+  <mat-progress-bar mode="determinate" [value]="data.dados.quantidadevistas()"></mat-progress-bar>  
   <mat-list *ngFor="let aula of data.dados._analytics.aulas">
     <mat-list-item><p style="font-size:12px;">{{aula.nome}}</p><button mat-button [hidden]="!aula.checked" ><mat-icon>check</mat-icon></button></mat-list-item>
     <mat-divider></mat-divider>

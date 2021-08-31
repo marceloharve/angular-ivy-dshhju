@@ -80,4 +80,10 @@ export class DadosAulaService implements OnInit {
       return true;
     }
   }
+
+  quantidadevistas()
+  {
+    let aulascheckada = this._analytics.aulas.filter(p => p.checked == true).length;
+    return  (aulascheckada/this._analytics.aulas.length)*100;
+  }
 }
