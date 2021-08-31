@@ -63,6 +63,7 @@ export class DadosAulaService implements OnInit {
     let indice = this._analytics.aulas.findIndex(p => p.atual == true);
     if (indice + 1 <= this._analytics.aulas.length) {
       this._analytics.aulas[indice].atual = false;
+      this._analytics.aulas[indice].checked = true;
       this._analytics.aulas[indice + 1].atual = true;
       console.log(this.getAtual());
     }

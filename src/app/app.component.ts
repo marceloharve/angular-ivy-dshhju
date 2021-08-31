@@ -44,7 +44,7 @@ export class Menu {
   constructor(
     public dialogRef: MatDialogRef<Menu>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData) {
-      
+      console.log(data);
     }
 
   onNoClick(): void {
