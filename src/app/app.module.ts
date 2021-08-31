@@ -18,6 +18,8 @@ import {MatListModule} from '@angular/material/list';
 import {Menu} from './app.component';
 import {MatMenuModule} from '@angular/material/menu';
 
+
+
 @NgModule({
   imports:      [ MatMenuModule,MatListModule,MatDialogModule, BrowserAnimationsModule,MatCardModule,MatRadioModule,MatButtonModule,MatToolbarModule, MatProgressBarModule, MatIconModule,BrowserModule, FormsModule,  RouterModule.forRoot([
     {path: "aula1/:id", component: Aula1Component},
