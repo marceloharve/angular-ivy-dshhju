@@ -8,6 +8,8 @@ export class DadosAulaService implements OnInit {
   [x: string]: any;
   _analytics: Aula = (data as any).default;
   constructor(private sanitizer: DomSanitizer) {
+    console.log('rr');
+    console.log(this._analytics);
     this._analytics.atual = true;
     this._analytics.topicos[0].atual = true;
     this._analytics.topicos.forEach(p =>{
@@ -74,10 +76,11 @@ export class DadosAulaService implements OnInit {
 
   selecionatopico(idTopicoAula)
   {
-    let indice = this._analytics.topicos.findIndex(p => p.idTopicoAula == idTopicoAula );
-    if (indice => 0) {
+    console.log(idTopicoAula);
+    let _indice = this._analytics.topicos.findIndex(p => p.idTopicoAula == idTopicoAula );
+    if (_indice => 0) {
       this._analytics.topicos.forEach(t => t.atual = false);
-      this._analytics.topicos[indice].atual = true;
+      this._analytics.topicos[_indice].atual = true;
 
     }    
   }

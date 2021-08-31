@@ -8,5 +8,6 @@ export interface TopicoAula {
   checked? : boolean;
   atual?: boolean;
   idTopicoAula : number;
-
+  CP : string;
+  MensagemBoasVindas : string;
 }

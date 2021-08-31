@@ -36,7 +36,7 @@ export class AppComponent  {
 
   constructor(public dialog: MatDialog,public dados : DadosAulaService)
   {
-
+    console.log("as");
   }
 }
 
