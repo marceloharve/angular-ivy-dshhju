@@ -1,7 +1,7 @@
 import { Component, Inject, VERSION } from '@angular/core';
 import { DadosAulaService } from './dados-aula.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { TopicoAula } from './aula';
+import { TopicoAula } from './topicoaula';
 import {MatMenuModule} from '@angular/material/menu';
 import { Router } from "@angular/router";
 

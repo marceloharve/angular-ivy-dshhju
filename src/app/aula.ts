@@ -1,12 +1,11 @@
-import { Desafio } from "./desafio";
+import { TopicoAula } from "./topicoaula";
 
-export interface TopicoAula {
-  nome: string;
-  video: string;
-  revisao: string;
-  desafio: Desafio;
+export interface Aula {
+  nome : string;
+  CP : string;
+  MensagemBoasVindas : string;
+  aula: number;
+  topicos : TopicoAula[];
   checked? : boolean;
   atual?: boolean;
-  idTopicoAula : number;
-
 }

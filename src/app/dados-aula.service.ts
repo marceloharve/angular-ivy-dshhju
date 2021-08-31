@@ -1,16 +1,16 @@
 import { Injectable, OnInit } from '@angular/core';
 import * as data from './_files/analytics.json';
-import { Modulo } from './modulo';
+import { Aula } from './aula';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class DadosAulaService implements OnInit {
   [x: string]: any;
-  _analytics: Modulo = (data as any).default;
+  _analytics: Aula = (data as any).default;
   constructor(private sanitizer: DomSanitizer) {
     this._analytics.atual = true;
-    this._analytics.aulas[0].atual = true;
-    this._analytics.aulas.forEach(p =>{
+    this._analytics.topicos[0].atual = true;
+    this._analytics.topicos.forEach(p =>{
       p.checked = false;
     });
   }
@@ -18,7 +18,7 @@ export class DadosAulaService implements OnInit {
   ngOnInit() {}
 
   getRevisaoAtual() {
-    let item = this._analytics.aulas.find(p => p.atual == true);
+    let item = this._analytics.topicos.find(p => p.atual == true);
 
     if (item != null) {
 
@@ -29,7 +29,7 @@ export class DadosAulaService implements OnInit {
   }
 
   getAulaAtual() {
-    let item = this._analytics.aulas.find(p => p.atual == true);
+    let item = this._analytics.topicos.find(p => p.atual == true);
 
     if (item != null) {
       return item.nome;
@@ -39,7 +39,7 @@ export class DadosAulaService implements OnInit {
   }
 
   getVideoAtual() {
-    let item = this._analytics.aulas.find(p => p.atual == true);
+    let item = this._analytics.topicos.find(p => p.atual == true);
 
     if (item != null) {
       return this.sanitizer.bypassSecurityTrustResourceUrl(item.video);
@@ -49,7 +49,7 @@ export class DadosAulaService implements OnInit {
   }
 
   getPerguntaAtual() {
-    let item = this._analytics.aulas.find(p => p.atual == true);
+    let item = this._analytics.topicos.find(p => p.atual == true);
 
     if (item != null) {
       return item.desafio.pergunta;
@@ -59,25 +59,25 @@ export class DadosAulaService implements OnInit {
   }
 
   getAtual() {
-    return this._analytics.aulas.find(p => p.atual == true);
+    return this._analytics.topicos.find(p => p.atual == true);
   }
 
   proximaAula() {
-    let indice = this._analytics.aulas.findIndex(p => p.atual == true);
-    if (indice + 1 <= this._analytics.aulas.length) {
-      this._analytics.aulas[indice].atual = false;
-      this._analytics.aulas[indice].checked = true;
-      this._analytics.aulas[indice + 1].atual = true;
+    let indice = this._analytics.topicos.findIndex(p => p.atual == true);
+    if (indice + 1 <= this._analytics.topicos.length) {
+      this._analytics.topicos[indice].atual = false;
+      this._analytics.topicos[indice].checked = true;
+      this._analytics.topicos[indice + 1].atual = true;
 
     }
   }
 
   selecionatopico(idTopicoAula)
   {
-    let indice = this._analytics.aulas.findIndex(p => p.idTopicoAula == idTopicoAula );
+    let indice = this._analytics.topicos.findIndex(p => p.idTopicoAula == idTopicoAula );
     if (indice => 0) {
-      this._analytics.aulas.forEach(t => t.atual = false);
-      this._analytics.aulas[indice].atual = true;
+      this._analytics.topicos.forEach(t => t.atual = false);
+      this._analytics.topicos[indice].atual = true;
 
     }    
   }
@@ -93,7 +93,7 @@ export class DadosAulaService implements OnInit {
 
   quantidadevistas()
   {
-    let aulascheckada = this._analytics.aulas.filter(p => p.checked == true).length;
-    return  (aulascheckada/this._analytics.aulas.length)*100;
+    let aulascheckada = this._analytics.topicos.filter(p => p.checked == true).length;
+    return  (aulascheckada/this._analytics.topicos.length)*100;
   }
 }
