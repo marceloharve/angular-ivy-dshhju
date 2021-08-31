@@ -21,14 +21,16 @@
     [value]="data.dados.quantidadevistas()"
   ></mat-progress-bar>
   <mat-list *ngFor="let aula of data.dados._analytics.aulas">
-    <mat-list-item
-      ><p style="font-size:12px;">
-        <button mat-button (click)="selectaula(aula.idTopicoAula)">{{aula.nome}}</button>
+    <mat-list-item>
+      {{aula.nome}}
+      <p style="font-size:12px;">
+        
         
       </p>
       <button mat-button [hidden]="!aula.checked">
         <mat-icon>check</mat-icon>
-      </button></mat-list-item
+      </button>
+      </mat-list-item
     >
     <mat-divider></mat-divider>
   </mat-list>

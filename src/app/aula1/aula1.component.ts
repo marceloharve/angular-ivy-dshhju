@@ -3,6 +3,8 @@ import { SafeResourceUrl } from '@angular/platform-browser';
 import { DadosAulaService } from '../dados-aula.service';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-aula1',

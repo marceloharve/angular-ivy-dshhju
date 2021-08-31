@@ -3,8 +3,6 @@ import { DadosAulaService } from './dados-aula.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { TopicoAula } from './aula';
 import {MatMenuModule} from '@angular/material/menu';
-import { Router } from '@angular/router';
-
 export interface DialogData {
   dados: DadosAulaService;
 }
@@ -45,17 +43,12 @@ export class Menu {
 
   constructor(
     public dialogRef: MatDialogRef<Menu>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData,private router: Router) {
-
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {
+      console.log(data);
     }
 
   onNoClick(): void {
     this.dialogRef.close();
-  }
-
-  selectaula(idTopicoAula)
-  {
-    this.router.navigate(["/aula1/"+ idTopicoAula.toString()]);
   }
 
 }
